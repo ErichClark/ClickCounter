@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,66 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Click_Counter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iS0-ks-VOo" userLabel="incrementButton">
+                                <rect key="frame" x="88" y="274" width="113" height="30"/>
+                                <state key="normal" title="Click to add"/>
+                                <connections>
+                                    <action selector="incrementCount" destination="BYZ-38-t0r" eventType="touchUpInside" id="qDR-Su-yGp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nps-jF-od8" userLabel="decrementButton">
+                                <rect key="frame" x="107" y="320" width="134" height="30"/>
+                                <state key="normal" title="Click to subtract"/>
+                                <connections>
+                                    <action selector="decrementCount" destination="BYZ-38-t0r" eventType="touchUpInside" id="jPO-Zi-0Yu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jdN-3l-89x">
+                                <rect key="frame" x="153" y="363" width="116" height="30"/>
+                                <state key="normal" title="Change colors?"/>
+                                <connections>
+                                    <action selector="randomizeUIColor" destination="BYZ-38-t0r" eventType="touchUpInside" id="KEi-Bh-RE3"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xxs-so-lrb" userLabel="currentCountLabel">
+                                <rect key="frame" x="130" y="108" width="115" height="91"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="91" id="xyl-ui-UI0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="58"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Nps-jF-od8" firstAttribute="top" secondItem="iS0-ks-VOo" secondAttribute="bottom" constant="16" id="1M3-Kh-Dyb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iS0-ks-VOo" secondAttribute="trailing" constant="174" id="25D-XA-TAr"/>
+                            <constraint firstItem="jdN-3l-89x" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="153" id="7a7-S4-FNr"/>
+                            <constraint firstItem="jdN-3l-89x" firstAttribute="top" secondItem="Nps-jF-od8" secondAttribute="bottom" constant="13" id="DUf-Ks-i7f"/>
+                            <constraint firstItem="Nps-jF-od8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="320" id="Dfm-Fc-drU"/>
+                            <constraint firstItem="iS0-ks-VOo" firstAttribute="top" secondItem="Xxs-so-lrb" secondAttribute="bottom" constant="75" id="Pxg-8s-7wH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jdN-3l-89x" secondAttribute="trailing" constant="106" id="UcN-oa-Fmq"/>
+                            <constraint firstItem="Xxs-so-lrb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="130" id="X9R-VP-RqT"/>
+                            <constraint firstItem="Nps-jF-od8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="107" id="ZTB-yl-5tU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Nps-jF-od8" secondAttribute="trailing" constant="134" id="cBt-z9-d2i"/>
+                            <constraint firstItem="Xxs-so-lrb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pxt-nY-vyN"/>
+                            <constraint firstItem="iS0-ks-VOo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="88" id="yMr-ef-jTL"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="label" destination="Xxs-so-lrb" id="Ra1-jM-lhg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="33.733133433283363"/>
         </scene>
     </scenes>
 </document>
